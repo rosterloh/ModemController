@@ -1,97 +1,37 @@
 <!DOCTYPE html>
-<html>
-
+<html ng-app="modemcontroller">
 <head>
-    <!-- loading animation :: Used as a splash screen-->
-    <!-- https://gist.github.com/domsammut/4605377 -->
-    <style type="text/css">
-    html {
-        background: #333333;
-    }
-    body {
-        width: 100%;
-        height: 100%q;
-        margin: 0;
-        padding: 0;
-    }
-    @-webkit-keyframes rotate-loading {
-        0% {
-            -webkit-transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(360deg);
-        }
-    }
-    @-webkit-keyframes loading-text-opacity {
-        0% {
-            opacity: 0
-        }
-        20% {
-            opacity: 0
-        }
-        50% {
-            opacity: 1
-        }
-        100% {
-            opacity: 0
-        }
-    }
-    .loading-container,
-    .loading {
-        height: 199px;
-        position: relative;
-        width: 199px;
-        border-radius: 100%;
-    }
-    .loading-container {
-        margin: 80px auto;
-    }
-    .loading {
-        border: 2px solid transparent;
-        border-color: transparent #aaa transparent #aaa;
-        -webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
-        -webkit-transform-origin: 50% 50%;
-    }
-    .loading-container .loading {
-        -webkit-transition: all 0.5s ease-in-out;
-    }
-    #loading-text {
-        -webkit-animation: loading-text-opacity 1.5s linear 0s infinite normal;
-        color: #ccc;
-        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-        font-weight: bold;
-        margin-top: 72px;
-        opacity: 0;
-        position: absolute;
-        text-align: center;
-        text-transform: uppercase;
-        top: 0;
-        width: 188px;
-        font-size: 23px;
-    }
-    h1 {
-        text-align: center;
-        color: #eee;
-    }
-    </style>
-    <script>
-    function init() {
-        require('./app.js');
-        setTimeout(function() {
-            window.location.assign('http://localhost:3000');
-        }, 2999);
-    }
-    </script>
+  <meta charset="utf-8">
+  <title>ModemController</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script type="text/javascript" src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/factory.js"></script>
+  <script type="text/javascript" src="js/controllers.js"></script>
+  <script type="text/javascript" src="js/directives.js"></script>
 </head>
-
-<body onload="init()">
-    <div class="loading-container">
-        <div class="loading"></div>
-        <div id="loading-text">
-            ModemController
-        </div>
-    </div>
-    <h1>Loading.. Please wait..</h1>
+<body>
+<div class="container" ng-controller="AppCtrl">
+   <div class="header" ng-controller="Toolbar">
+     <div class="btn-group pull-right">
+       <a href="#" class="btn btn-xs btn-default" ng-show="user" ng-click="logoutUser()">Logout</a>
+       <button ng-click="minimize()" type="button" class="btn btn-default btn-xs">
+         <span class="glyphicon glyphicon-minus"></span>
+       </button>
+       <button ng-click="toggleFullscreen()" type="button" class="btn btn-default btn-xs">
+         <span class="glyphicon glyphicon-fullscreen"></span>
+       </button>
+       <button ng-click="close()" type="button" class="btn btn-default btn-xs">
+         <span class="glyphicon glyphicon-remove"></span>
+       </button>
+     </div>
+     <h1>ModemController</h1>
+   </div>
+   <hr/>
+   <div ui-view></div>
+</div>
 </body>
-
 </html>

@@ -11,3 +11,6 @@ Node-webkit application for serial AT modem control
 ```bash
     $ gulp build-win
 ```
+
+## Debugging
+Set toolbar and frame to true in package.json
