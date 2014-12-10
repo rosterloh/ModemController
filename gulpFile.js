@@ -1,9 +1,9 @@
-var gulp = require('gulp')
-var shell = require('gulp-shell')
+var gulp = require('gulp');
+var shell = require('gulp-shell');
 
-// Current version: v0.10.4: (Sep 5, 2014, based off of Node v0.11.13, Chromium 35.0.1916.157)
+// Current version: v0.11.2: (Nov 26, 2014, based off of Node v0.11.13, Chromium 38.0.2125.104)
 // Previous version: v0.8.6: (Apr 18, 2014, based off of Node v0.10.22, Chrome 30.0.1599.66)
-var nwVersion = '0.10.4';
+var nwVersion = '0.11.2';
 
 // Run project
 gulp.task('run', shell.task([

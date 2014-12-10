@@ -2,9 +2,7 @@
   "name": "ModemController",
   "version": "0.0.1",
   "homepage": "https://github.com/rosterloh/ModemController",
-  "authors": [
-    "Richard Osterloh <richard.osterloh@gmail.com>"
-  ],
+  "author": "Richard Osterloh <richard.osterloh@gmail.com>",
   "description": "Node webkit application for controlling a serial modem",
   "main": "index.html",
   "moduleType": [
@@ -22,10 +20,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.3.0-rc.1",
-    "angular-bootstrap": "^0.11.0",
-    "bootstrap": "^3.2.0",
-    "angular-ui-router": "^0.2.11",
-    "fontawesome": "^4.2.0",
+    "angular": "~1.3.6",
+    "angular-bootstrap": "~0.11.2",
+    "bootstrap": "~3.3.1",
+    "angular-ui-router": "~0.2.13",
+    "fontawesome": "~4.2.0"
   }
 }
